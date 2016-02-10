@@ -18,12 +18,16 @@ class Pref:
 		Pref.show_line_endings_on_status_bar          = s.get('show_line_endings_on_status_bar', True)
 		Pref.alert_when_line_ending_is                = [l.lower() for l in s.get('alert_when_line_ending_is', [])]
 		Pref.auto_convert_line_endings_to             = s.get('auto_convert_line_endings_to', '')
+		listener = StatusBarLineEndings()
+		for window in sublime.windows():
+			for view in reversed(window.views()):
+				listener.on_load(view)
 
 class StatusBarLineEndings(sublime_plugin.EventListener):
 
 	def on_load(self, view):
 		if view.line_endings().lower() in Pref.alert_when_line_ending_is:
-			sublime.message_dialog(view.line_endings()+' line endings detected on file:\n\n'+view.file_name());
+			sublime.message_dialog(str(view.line_endings())+' line endings detected on file:\n\n'+str(view.file_name() or view.name()));
 
 	def on_pre_save(self, view):
 		if Pref.auto_convert_line_endings_to != '' and view.line_endings().lower() != Pref.auto_convert_line_endings_to.lower():
