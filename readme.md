@@ -12,6 +12,12 @@ Allows you to:
 
 Download or clone the contents of this repository to a folder with the same name as the package into the Packages/ folder of Sublime Text.
 
+To display the line endings in the status bar, add the following to your ST3 User Preferences (Preferences > Settings - User)
+```
+{
+    "show_line_endings": true
+}
+```
 # Todo
 
 Show mixed line endings.
