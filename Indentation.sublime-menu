@@ -7,14 +7,14 @@
 		"args": {
 			"type": "spaces"
 		},
-		"caption": "Convert Indentation to all views to Spaces"
+		"caption": "Convert Indentation in All Open Files to Spaces"
 	},
 	{
 		"command": "convert_indentation_window",
 		"args": {
 			"type": "tabs"
 		},
-		"caption": "Convert Indentation to all views to Tabs"
+		"caption": "Convert Indentation in All Open Files to Tabs"
 	},
 	{
 		"caption": "-"
