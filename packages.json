@@ -1,0 +1,11 @@
+{
+    "schema_version": "1.1",
+    "packages": [
+        {
+            "name": "LineEndings",
+            "author": "titoBouzouti",
+            "description": "Provides shortcuts for converting line endings and indentation in Sublime Text",
+            "homepage": "https://github.com/titoBouzout/LineEndings",
+        }
+    ]
+}
